@@ -40,3 +40,56 @@ def update_book(book_id, title, author, year):
     connection.close()
     
 #Delete book by book id 
+def delete_book(book_id):
+    connection = get_connection()
+    cursor = connection.cursor()
+    query = "DELETE FROM books WHERE book_id = %s"
+    cursor.execute(query, (book_id,))
+    connection.commit()
+    cursor.close()
+    connection.close()
+    
+#Add new user
+def add_user(username, email):
+    connection = get_connection()
+    cursor = connection.cursor()
+    query = "INSERT INTO users (username, email) VALUES (%s, %s)"
+    cursor.execute(query, (username, email))
+    connection.commit()
+    cursor.close()
+    connection.close()
+    
+#Retrieve all users
+def get_users():
+    connection=get_connection()
+    cursor = connection.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM users")
+    users = cursor.fetchall()
+    cursor.close()
+    connection.close()
+    return users
+
+#Borrowing system and entry 
+def create_loan(book_id, user_id, loan_date, return_date):
+    connection = get_connection()
+    cursor = connection.cursor()
+    query = """INSERT INTO loans (book_id, user_id, loan_date, return_date) VALUES (%s, %s, %s, %s) """
+    cursor.execute(query, (book_id, user_id, loan_date, return_date))
+    connection.commit()
+    cursor.close()
+    connection.close()
+    
+#Getting loans details 
+def get_loans():
+    connection = get_connection()
+    cursor = connection.cursor(dictionary=True)
+    cursor.execute("""
+        SELECT loans.loan_id, books.title, users.username, loans.loan_date, loans.return_date
+        FROM loans
+        JOIN books ON loans.book_id = books.book_id
+        JOIN users ON loans.user_id = users.user_id 
+    """)
+    loans = cursor.fetchall()
+    cursor.close()
+    connection.close()
+    return loans 

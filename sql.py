@@ -38,3 +38,5 @@ def update_book(book_id, title, author, year):
     connection.commit()
     cursor.close()
     connection.close()
+    
+#Delete book by book id 

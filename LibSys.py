@@ -13,13 +13,13 @@ def fetch_books():
 @app.route('/books', methods=['POST'])
 def add_book():
     data = request.json
-    create_book(data['title'], data['author'], data['year'])
+    create_book(data['title'], data['author'], data['genre'])
     return jsonify({"message": "Book successfully added"}), 201
 
 @app.route('/books/<int:book_id>', methods=['PUT'])
 def modify_book(book_id):
     data = request.json
-    update_book(book_id, data['title'], data['author'], data['year'])
+    update_book(book_id, data['title'], data['author'], data['genre'])
     return jsonify({"message": "Book successfully updated"})
 
 @app.route('/books/<int:book_id>', methods=['DELETE'])

@@ -11,11 +11,11 @@ def get_connection():
     )
     
 #Adds a new book to system 
-def create_book(title, author, year):
+def create_book(title, author, genre):
     connection = get_connection()
     cursor = connection.cursor()
-    query = "INSERT INTO books (title, author, year) VALUES (%s, %s, %s)"
-    cursor.execute(query, (title, author, year))
+    query = "INSERT INTO books (title, author, genre) VALUES (%s, %s, %s, %s)"
+    cursor.execute(query, (title, author, genre))
     connection.commit()
     cursor.close()
     connection.close()
@@ -30,11 +30,11 @@ def get_books():
     return books 
 
 #Update the details of the book 
-def update_book(book_id, title, author, year):
+def update_book(book_id, title, author, genre):
     connection = get_connection()
     cursor = connection.cursor()
-    query = "UPDATE books SET title = %s, author =%s, year = %s WHERE book_id = %s"
-    cursor.execute(query, (title, author, year, book_id))
+    query = "UPDATE books SET title = %s, author =%s, genre = %s WHERE book_id = %s"
+    cursor.execute(query, (title, author, genre, book_id))
     connection.commit()
     cursor.close()
     connection.close()

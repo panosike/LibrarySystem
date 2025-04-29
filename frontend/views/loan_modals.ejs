@@ -1,0 +1,60 @@
+<!-- Create Loan Modal -->
+<div class="modal fade" id="createLoanModal" tabindex="-1" aria-labelledby="createLoanModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createLoanModalLabel">Create New Borrowing</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="create-loan-form">
+                    <div class="mb-3">
+                        <label for="loan-book" class="form-label">Select Book</label>
+                        <select class="form-select" id="loan-book" required>
+                            <!-- Available books will be loaded here via JavaScript -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loan-customer" class="form-label">Select Customer</label>
+                        <select class="form-select" id="loan-customer" required>
+                            <!-- Available customers will be loaded here via JavaScript -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loan-borrow-date" class="form-label">Borrow Date</label>
+                        <input type="date" class="form-control" id="loan-borrow-date">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="save-loan-btn">Create Borrowing</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Return Book Modal -->
+<div class="modal fade" id="returnBookModal" tabindex="-1" aria-labelledby="returnBookModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="returnBookModalLabel">Return Book</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="return-book-form">
+                    <input type="hidden" id="return-loan-id">
+                    <div class="mb-3">
+                        <label for="loan-return-date" class="form-label">Return Date</label>
+                        <input type="date" class="form-control" id="loan-return-date">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="confirm-return-btn">Confirm Return</button>
+            </div>
+        </div>
+    </div>
+</div>

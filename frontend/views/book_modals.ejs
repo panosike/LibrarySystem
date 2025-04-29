@@ -1,0 +1,64 @@
+<!-- Add Book Modal -->
+<div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="addBookModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addBookModalLabel">Add New Book</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-book-form">
+                    <div class="mb-3">
+                        <label for="book-title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="book-title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="book-author" class="form-label">Author</label>
+                        <input type="text" class="form-control" id="book-author" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="book-genre" class="form-label">Genre</label>
+                        <input type="text" class="form-control" id="book-genre" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="save-book-btn">Save Book</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Book Modal -->
+<div class="modal fade" id="editBookModal" tabindex="-1" aria-labelledby="editBookModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editBookModalLabel">Edit Book</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-book-form">
+                    <input type="hidden" id="edit-book-id">
+                    <div class="mb-3">
+                        <label for="edit-book-title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="edit-book-title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit-book-author" class="form-label">Author</label>
+                        <input type="text" class="form-control" id="edit-book-author" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit-book-genre" class="form-label">Genre</label>
+                        <input type="text" class="form-control" id="edit-book-genre" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="update-book-btn">Update Book</button>
+            </div>
+        </div>
+    </div>
+</div>

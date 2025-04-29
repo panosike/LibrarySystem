@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .tab-content {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-top: none;
+        }
+
+        .action-buttons {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Library Management System</h1>
+
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="books-tab" data-bs-toggle="tab" data-bs-target="#books"
+                    type="button" role="tab" aria-controls="books" aria-selected="true">Books</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="customers-tab" data-bs-toggle="tab" data-bs-target="#customers"
+                    type="button" role="tab" aria-controls="customers" aria-selected="false">Customers</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="borrowing-tab" data-bs-toggle="tab" data-bs-target="#borrowing"
+                    type="button" role="tab" aria-controls="borrowing" aria-selected="false">Borrowing</button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="myTabContent">
+            <!-- Books Tab -->
+            <div class="tab-pane fade show active" id="books" role="tabpanel" aria-labelledby="books-tab">
+                <div class="d-flex justify-content-between mb-3">
+                    <h3>Books Management</h3>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBookModal">
+                        Add New Book
+                    </button>
+                </div>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Genre</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="books-table-body">
+                        <!-- Books will be loaded here via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Customers Tab -->
+            <div class="tab-pane fade" id="customers" role="tabpanel" aria-labelledby="customers-tab">
+                <div class="d-flex justify-content-between mb-3">
+                    <h3>Customers Management</h3>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#addCustomerModal">
+                        Add New Customer
+                    </button>
+                </div>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customers-table-body">
+                        <!-- Customers will be loaded here via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Borrowing Tab -->
+            <div class="tab-pane fade" id="borrowing" role="tabpanel" aria-labelledby="borrowing-tab">
+                <div class="d-flex justify-content-between mb-3">
+                    <h3>Borrowing Management</h3>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#createLoanModal">
+                        Create New Borrowing
+                    </button>
+                </div>
+
+                <h4>Active Borrowings</h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Book Title</th>
+                            <th>Customer</th>
+                            <th>Borrow Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="active-loans-table-body">
+                        <!-- Active loans will be loaded here via JavaScript -->
+                    </tbody>
+                </table>
+
+                <h4 class="mt-4">Borrowing History</h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Book Title</th>
+                            <th>Customer</th>
+                            <th>Borrow Date</th>
+                            <th>Return Date</th>
+                            <th>Late Fee ($)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="loans-history-table-body">
+                        <!-- Loan history will be loaded here via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <%- include('./book_modals') %>
+    <%- include('./customer_modals') %>
+    <%- include('./loan_modals') %>
+
+                <!-- Scripts -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="/script.js"></script>
+</body>
+
+</html>

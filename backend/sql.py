@@ -1,7 +1,7 @@
 import mysql.connector 
 from credentials import DB_HOST, DB_USER, DB_PASSWORD, DB_NAME
 import bcrypt
-from datetime import datetime, timedelta
+from datetime import datetime, date, timedelta
 
 # Creating and returning DB connection 
 def get_connection():
@@ -307,7 +307,7 @@ def return_book(loan_id, return_date):
     book_id, borrow_date = loan
     
     # Calculate late fee if applicable (more than 10 days)
-    borrow_date = borrow_date if isinstance(borrow_date, datetime.date) else borrow_date.date()
+    borrow_date = borrow_date if isinstance(borrow_date, date) else borrow_date.date()
     due_date = borrow_date + timedelta(days=10)
     
     late_fee = 0.0

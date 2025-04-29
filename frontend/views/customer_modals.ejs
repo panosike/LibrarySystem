@@ -1,0 +1,74 @@
+<!-- Add Customer Modal -->
+<div class="modal fade" id="addCustomerModal" tabindex="-1" aria-labelledby="addCustomerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addCustomerModalLabel">Add New Customer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-customer-form">
+                    <div class="mb-3">
+                        <label for="customer-firstname" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="customer-firstname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="customer-lastname" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="customer-lastname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="customer-email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="customer-email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="customer-password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="customer-password" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="save-customer-btn">Save Customer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Customer Modal -->
+<div class="modal fade" id="editCustomerModal" tabindex="-1" aria-labelledby="editCustomerModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editCustomerModalLabel">Edit Customer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-customer-form">
+                    <input type="hidden" id="edit-customer-id">
+                    <div class="mb-3">
+                        <label for="edit-customer-firstname" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="edit-customer-firstname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit-customer-lastname" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="edit-customer-lastname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit-customer-email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="edit-customer-email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit-customer-password" class="form-label">New Password (leave blank to keep
+                            current)</label>
+                        <input type="password" class="form-control" id="edit-customer-password">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="update-customer-btn">Update Customer</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,7 +12,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 // API base URL
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'https://librarysystem-mbi9.onrender.com';
 
 // Home route - render the main page
 app.get('/', (req, res) => {
